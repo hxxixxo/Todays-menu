@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>오늘 뭐 먹지?</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+	<style type="text/css">
+		html{font-family: 'Noto Sans KR', sans-serif;}
+		div{width: 600px;
+			line-height: 200px;
+			font-size: 200px;
+			position: absolute;
+			left: 40px;
+			top: 0px;
+			word-break: keep-all;}
+
+			p{width: 600px;
+				font-size: 18px;
+				position: absolute;
+				left: 630px;
+				top: 0px;}
+				
+				q{width: 600px;
+				font-size: 18px;
+				position: absolute;
+				left: 600px;
+				top: 1080px;}
+	</style>
+</head>
+<body>
+
+	<div>오늘 뭐 먹지?</div>
+	<p>음식들을 눌러 오늘의 메뉴를 골라보세요.</p>
+	<q>듣고 있는 음식을 멈추려면 저를 클릭하세요.</q>
+
+	<input id="vol" type="range" max="100" min="0" value="100">
+	<style type="text/css">
+
+		#vol {
+  -webkit-appearance: none;
+  height: 3px;
+  background: #d3d3d3;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+	#vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background: black;
+  border-radius:50px;
+  cursor: pointer;
+}
+
+	#vol{
+		position: absolute;
+		left: 1350px;
+		top: 30px;
+	}
+
+	</style>
+	<img id="man" src="man.png"> 
+	<script type="text/javascript">
+
+		vol.oninput=function(){
+			chickenSnd.volume=vol.value/100;
+			kimSnd.volume=vol.value/100;
+			pizzaSnd.volume=vol.value/100;
+			jokbalSnd.volume=vol.value/100;
+			sushiSnd.volume=vol.value/100;
+		}
+		man.onmouseover=function(){
+			man.src="changeman.png";
+		}
+		man.onmouseout=function(){
+			man.src="man.png";
+		}
+		man.onclick=function(){
+			chickenSnd.pause();
+			kimSnd.pause();
+			pizzaSnd.pause();
+			sushiSnd.pause();
+			jokbalSnd.pause();
+		}
+	</script>
+	<style type="text/css">
+		#man{
+			position: absolute;
+			left: 500px;
+			top: 300px;
+		}
+		#changman{
+			position: absolute;
+			left: 500px;
+			top: 300px;
+		}
+	</style>
+
+
+	<audio id="chickenSnd" src="chicken.mp3"></audio>
+	<img id="chicken" src="chicken.png">
+
+	<script type="text/javascript">
+		chicken.onclick=function(){
+			chickenSnd.play();
+		}
+		
+	</script>
+	<style type="text/css">
+		#chicken{
+			position: absolute;
+			left: 620px;
+			top: 0px;
+			width: 400px;
+		}
+	</style>
+
+
+	<audio id="kimSnd" src="kim.mp3"></audio>
+	<img id="kim" src="kim.png">
+
+	<script type="text/javascript">
+		kim.onclick=function(){
+			kimSnd.play();
+		}
+		
+	</script>
+	<style type="text/css">
+		#kim{
+			position: absolute;
+			left: 170px;
+			top: 180px;
+			width: 450px;
+		}
+	</style>
+
+
+	<audio id="pizzaSnd" src="pizza.mp3"></audio>
+	<img id="pizza" src="pizza.png">
+
+	<script type="text/javascript">
+		pizza.onclick=function(){
+			pizzaSnd.play();
+		}
+		
+	</script>
+	<style type="text/css">
+		#pizza{
+			position: absolute;
+			left: 1000px;
+			top: 80px;
+			width: 400px;
+		}
+	</style>
+
+
+	<audio id="sushiSnd" src="sushi.mp3"></audio>
+	<img id="sushi" src="sushi.png">
+
+	<script type="text/javascript">
+		sushi.onclick=function(){
+			sushiSnd.play();
+		}
+		
+	</script>
+	<style type="text/css">
+		#sushi{
+			position: absolute;
+			left: 40px;
+			top: 550px;
+			width: 400px;
+		}
+	</style>
+
+
+	<audio id="jokbalSnd" src="jokbal.mp3"></audio>
+	<img id="jokbal" src="jokbal.png">
+
+	<script type="text/javascript">
+		jokbal.onclick=function(){
+			jokbalSnd.play();
+		}
+		
+	</script>
+	<style type="text/css">
+		#jokbal{
+			position: absolute;
+			left: 1030px;
+			top: 580px;
+			width: 400px;
+		}
+	</style>
+
+
+</body>	
+</html>
